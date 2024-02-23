@@ -1,0 +1,73 @@
+/* *{border: 2px solid red;} */
+
+
+.nav-link {
+    font-size: 1.5rem; 
+}
+
+
+.navbar-toggler:hover {
+    border-color: rgb(15, 29, 138); 
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: rgb(15, 29, 138); 
+}
+
+.nav-border-custom {
+    border-bottom: 1px solid rgb(15, 29, 138);
+}
+
+.navbar-custom-sz {
+    background-color: #036dd0; 
+    padding-top: 1rem; 
+    padding-bottom: 1rem;
+    height: 120px;
+}
+
+/* Adjusting font sizes within the navbar */
+.navbar-brand {
+    font-size: 2rem; /* Larger font size */
+}
+
+
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.1); /* Adjust the border color if needed */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.nav-link-bold {
+    font-weight: 700; /* Extra bold */
+}
+
+/* Custom class for text outline */
+.nav-link-outline {
+    text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+.bg-custom {
+    background-color: #036dd0
+}
+
+.no-border {
+    border-bottom: none;
+}
+
+
+/* .container {
+    position: relative;
+    height: 300px; 
+    background-image: url('https://res.cloudinary.com/dkeozpkpv/image/upload/v1708724599/NFL_prvqto.png');
+    background-size: cover; 
+    background-position: center; 
+} */
+
