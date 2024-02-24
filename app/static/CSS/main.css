@@ -42,10 +42,9 @@
 }
 
 .nav-link-bold {
-    font-weight: 700; /* Extra bold */
+    font-weight: 700; 
 }
 
-/* Custom class for text outline */
 .nav-link-outline {
     text-shadow: 
     -1px -1px 0 #000,  
@@ -62,12 +61,11 @@
     border-bottom: none;
 }
 
+.navbar {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-/* .container {
-    position: relative;
-    height: 300px; 
-    background-image: url('https://res.cloudinary.com/dkeozpkpv/image/upload/v1708724599/NFL_prvqto.png');
-    background-size: cover; 
-    background-position: center; 
-} */
 
+.container-profile {
+    padding-top: -30px;
+}

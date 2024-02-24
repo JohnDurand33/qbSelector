@@ -22,6 +22,8 @@ def signup():
             db.session.add(user)    
             db.session.commit()
 
+            return redirect(url_for('site.home'))
+
     except:
         raise Exception('Invalid form data: please check your form')
     
@@ -40,8 +42,6 @@ def signin():
 
             if logged_user and check_password_hash(logged_user.password, password):
                 login_user(logged_user)
-                print(f"User {logged_user.email} logged in: {current_user.is_authenticated}")  # Debug print
-                flash(f'You were successful in your login')
                 return redirect(url_for('site.profile'))
             else:
                 flash(f'You have failed to login (security!)', 'error')

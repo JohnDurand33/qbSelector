@@ -56,15 +56,15 @@ class Quarterback(db.Model):
     team = db.Column(db.String(50))
     division = db.Column(db.String(10))
     conference = db.Column(db.String(50))
-    image_path = db.Column(db.String(256), nullable=True)
+    image_link = db.Column(db.String(256), nullable=True)
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
-    def __init__(self,team,division= '',conference='',image_path='',user_token=''):
+    def __init__(self,team,division= '',conference='',image_link='',user_token=''):
         self.id = self.set_id()
         self.team = team
         self.division = division
         self.conference = conference
-        self.image_path = image_path
+        self.image_link = image_link
         self.user_token = user_token
 
     def __repr__(self):
@@ -75,42 +75,7 @@ class Quarterback(db.Model):
 
 class QuarterbackSchema(ma.Schema):
     class Meta:
-        fields = ['id', 'team','division','conference', 'image_path']
+        fields = ['id', 'team','division','conference', 'image_link']
 
 qb_schema = QuarterbackSchema()
 qbs_schema = QuarterbackSchema(many=True)
-
-qb_dict = {
-'bills': ('afc east', 'afc'),
-'dolphins': ('afc east', 'afc'),
-'patriots': ('afc east', 'afc'),
-'jets': ('afc east', 'afc'),
-'ravens': ('afc north', 'afc'),
-'bengals': ('afc north', 'afc'),
-'browns': ('afc north', 'afc'),
-'steelers': ('afc north', 'afc'),
-'texans': ('afc south', 'afc'),
-'colts': ('afc south', 'afc'),
-'jaguars': ('afc south', 'afc'),
-'titans': ('afc south', 'afc'),
-'broncos': ('afc west', 'afc'),
-'chiefs': ('afc west', 'afc'),
-'raiders': ('afc west', 'afc'),
-'chargers': ('afc west', 'afc'),
-'cowboys': ('nfc east', 'nfc'),
-'giants': ('nfc east', 'nfc'),
-'eagles': ('nfc east', 'nfc'),
-'commanders': ('nfc east', 'nfc'),
-'bears': ('nfc north', 'nfc'),
-'lions': ('nfc north', 'nfc'),
-'packers': ('nfc north', 'nfc'),
-'vikings': ('nfc north', 'nfc'),
-'falcons': ('nfc south', 'nfc'),
-'panthers': ('nfc south', 'nfc'),
-'saints': ('nfc south', 'nfc'),
-'buccaneers': ('nfc south', 'nfc'),
-'cardinals': ('nfc west', 'nfc'),
-'rams': ('nfc west', 'nfc'),
-'49ers': ('nfc west', 'nfc'),
-'seahawks': ('nfc west', 'nfc')
- }

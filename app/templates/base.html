@@ -11,7 +11,8 @@
 <title></title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-custom-sz nav-border-custom {% if hide_navbar_border %}no-border{% endif %}">
+    {% set is_profile_page = request.path == url_for('site.profile') %}
+    <nav class="navbar navbar-expand-lg sticky-top navbar-custom-sz nav-border-custom {{ 'no-border' if current_user.is_authenticated and is_profile_page else '' }}">
         <div class="container">
             <a href="{{ url_for('site.home') }}" class="navbar-brand text-danger nav-link-bold nav-link-outline">Quarterback Selector</a>
             <button 
@@ -23,21 +24,21 @@
             <div class="collapse navbar-collapse bg-custom" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="{{ url_for('site.home') }}" class="nav-link text-danger nav-link-bold nav-link-outline">Home</a>
+                        <a href="{{ url_for('site.home') }}" class="nav-link text-light nav-link-bold">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('site.profile') }}" class="nav-link text-danger nav-link-bold nav-link-outline">Profile</a>
+                        <a href="{{ url_for('site.profile') }}" class="nav-link text-light nav-link-bold">Profile</a>
                     </li>
                     {% if current_user.is_authenticated %}
                     <li class="nav-item">
-                        <a href="{{ url_for('auth.logout') }}" class="nav-link text-danger nav-link-bold nav-link-outline">Logout</a>
+                        <a href="{{ url_for('auth.logout') }}" class="nav-link text-light nav-link-bold">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a href="{{ url_for('auth.signin') }}" class="nav-link text-danger nav-link-bold nav-link-outline">Sign In</a>
+                        <a href="{{ url_for('auth.signin') }}" class="nav-link text-light nav-link-bold">Sign In</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('auth.signup') }}" class="nav-link text-danger nav-link-bold nav-link-outline">Sign Up</a>
+                        <a href="{{ url_for('auth.signup') }}" class="nav-link text-light nav-link-bold">Sign Up</a>
                     </li>
                     {% endif %}
                 </ul>
